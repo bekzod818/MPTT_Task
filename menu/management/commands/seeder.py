@@ -1,4 +1,3 @@
-# menu_app/management/commands/add_menu_items.py
 from django.core.management.base import BaseCommand
 from menu.models import MenuItem
 
