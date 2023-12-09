@@ -1,0 +1,9 @@
+{% load draw_dropdown %}
+
+<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+    {% for item in item.items.all %}
+        <a class="dropdown-item">
+            <a href="{{ item.get_url }}">{{ item.title }}</a>
+        </a>
+    {% endfor %}
+</div>
