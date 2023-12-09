@@ -1,15 +1,13 @@
 from django.contrib import admin
-from .models import MenuItem
-from .forms import MenuItemForm
+
+from menu.models import Menu, MenuItem
 
 
-class MenuItemInline(admin.StackedInline):
-    model = MenuItem
-    form = MenuItemForm
-
-
+@admin.register(MenuItem)
 class MenuItemAdmin(admin.ModelAdmin):
-    inlines = [MenuItemInline]
-    form = MenuItemForm
+    list_display = ('title', 'parent', 'is_visible', 'order')
+    list_editable = ('is_visible', 'order')
+    list_filter = ('parent',)
 
-admin.site.register(MenuItem, MenuItemAdmin)
+
+admin.site.register(Menu)

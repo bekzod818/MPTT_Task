@@ -1,8 +1,8 @@
-from django.urls import path, re_path
-from .views import IndexView
+from django.urls import path
+from menu.views import HomeView, BlogView
 
 
 urlpatterns = [
-    path('', IndexView.as_view(), name="index"),
-    re_path(r'^(.*)/$', IndexView.as_view(), name="index")
+    path("blog/", BlogView.as_view(), name="blog"),
+    path("", HomeView.as_view(), name="home"),
 ]

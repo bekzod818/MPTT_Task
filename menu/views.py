@@ -1,7 +1,9 @@
-from django.shortcuts import render
-from django.views.generic import View
+from django.views.generic import TemplateView
 
 
-class IndexView(View):
-    def get(self, request, params=None):
-        return render(request, 'menu/index.html')
+class HomeView(TemplateView):
+    template_name = 'home.html'
+
+
+class BlogView(TemplateView):
+    template_name = 'blog.html'
